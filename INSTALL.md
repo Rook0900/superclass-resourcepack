@@ -1,17 +1,37 @@
 # 설치 방법
 
+## 한눈에 보기 — 받을 파일은 이것뿐
+
+모두 한 곳에서 받습니다: https://github.com/Rook0900/superclass-resourcepack/releases/tag/mod (**Assets** 펼치기)
+
+| 순서 | 받을 것 | 용도 | 비고 |
+|---|---|---|---|
+| 1 | `fabric-installer-1.1.1.exe` | Fabric 설치 프로그램 | 처음 한 번만. 설치 후 지워도 됩니다 |
+| 2 | `SuperClass_mods.zip` | Fabric API + SuperClass 클라이언트 모드 | **업데이트될 때마다 다시 받아서 덮어쓰기** |
+| 3 | (받을 필요 없음) 리소스팩 | 서버 접속 시 자동으로 받아짐 | 접속할 때 물으면 **수락** |
+
+`superclassclient.jar` 는 모드만 따로 올려 둔 파일입니다. 위 zip 을 쓰면 **받지 않아도 됩니다.**
+(같이 넣으면 같은 모드가 두 번 들어가 오류가 납니다 — `mods` 폴더에는 모드 jar 가 하나만 있어야 합니다)
+
+게임 서버 주소는 방장에게 물어보세요.
+
+---
+
 ## 1. Fabric 설치
 
-https://fabricmc.net/use/installer 에서 설치 프로그램을 받아 **실행**합니다.
+아래에서 **fabric-installer-1.1.1.exe** 를 받아 **실행**합니다.
+https://github.com/Rook0900/superclass-resourcepack/releases/tag/mod
 
-- **Minecraft Version**: `26.2`
+(공식 배포처에서 받아도 됩니다: https://fabricmc.net/use/installer)
+
+- **Minecraft Version**: `26.3`
 - 나머지는 기본값 그대로 두고 **Install**
 
 설치가 끝나면 프로그램은 지워도 됩니다.
 
 ## 2. 한 번 실행해서 폴더를 만들기
 
-마인크래프트 실행기에서 **`fabric-loader-26.2`** 프로필을 선택하고 실행합니다.
+마인크래프트 실행기에서 **`fabric-loader-26.3`** 프로필을 선택하고 실행합니다.
 게임이 켜지면 바로 꺼도 됩니다. 이 과정에서 `mods` 폴더가 자동으로 생깁니다.
 
 > 폴더를 직접 만들지 마세요. 이름을 `mod` 로 만들면 아무것도 인식되지 않습니다.
@@ -33,7 +53,7 @@ https://github.com/Rook0900/superclass-resourcepack/releases/tag/mod
 
 ## 4. 실행
 
-실행기에서 **`fabric-loader-26.2`** 프로필로 실행합니다.
+실행기에서 **`fabric-loader-26.3`** 프로필로 실행합니다.
 바닐라 프로필로 켜면 모드가 하나도 안 켜집니다.
 
 ---
@@ -59,14 +79,25 @@ https://github.com/Rook0900/superclass-resourcepack/releases/tag/mod
 - **리소스팩** — 서버에 접속하면 자동으로 받아집니다
 - **Sodium / Iris** — 최적화·셰이더 모드. 이 게임에 필요 없습니다
 
-## 모드를 안 깔면
+## 모드는 꼭 설치하세요
 
-게임은 됩니다. 능력·모델·이펙트는 전부 서버가 처리합니다.
-못 쓰는 것은 **G키 직업 목록**, **AK 재장전 애니메이션**, **히트마커 등 클라 전용 연출** 입니다.
+안 깔아도 접속은 되고 능력도 서버에서 정상 동작합니다. 하지만 아래가 빠집니다.
+
+- **직업 모델이 에러 블록(보라/검정 격자)으로 보입니다**
+  - Amethyst, Angel, Demolitionist, Displayholic, Donor, Executioner, Frostbinder, Glitch, Nightblade, Phoenix(날개·알·영혼불), Signaling, Slayer, Soldier, Warlock, 시계(Time Controller) 등 대부분의 능력 모델이 모드에만 들어 있습니다
+- **Displayholic 의 스킨 채도·밝기 연출**이 보이지 않습니다
+- **G키 직업 목록**, **AK 재장전 애니메이션**, **히트마커 등 클라 전용 연출**이 없습니다
+
+## 업데이트됐을 때
+
+모드는 가끔 갱신됩니다. 새 직업이나 모델이 추가되면 **`SuperClass_mods.zip` 을 다시 받아서 같은 방식으로 덮어쓰기** 하세요.
+(같은 이름이라 옛 파일이 자동으로 바뀝니다. 방장이 "모드 업데이트했다"고 하면 다시 받으면 됩니다.)
 
 ## 흔한 실수
 
+- `mods` 폴더에 `superclassclient.jar` 와 `superclassclient-1.0.0.jar` 처럼 이름이 다른 같은 모드를 둘 다 넣음 → 하나만 남기기
+
 - 폴더를 `mod` 로 만듦 → 반드시 `mods`
-- 바닐라 프로필로 실행 → `fabric-loader-26.2` 를 골라야 함
+- 바닐라 프로필로 실행 → `fabric-loader-26.3` 를 골라야 함
 - Fabric API 를 빼먹음 → 시작하자마자 튕김
 - GitHub 첫 화면의 `<> Code → Download ZIP` 을 받음 → 그건 소스코드입니다. **Releases → Assets** 에서 받으세요
